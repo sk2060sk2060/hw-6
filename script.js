@@ -177,7 +177,7 @@ function resetGlobalVariables() {
 function searchCity(cityName){
  // build URL to query the database
  console.log(cityName);
- var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + 
+ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + 
  cityName + "&appid=" + APIKey;
 
  // run the AJAX call to the OpenWatherAPI
@@ -224,7 +224,7 @@ function searchCity(cityName){
        addCardDeckHeader()
        for (var i=0; i < 5; i++) {
          iconcode = fiveDayForecast[i].weather[0].icon;
-         iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+         iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
         //  dateValue = moment().tz(country + "/" + city).add(i, 'days').format('l');
         dateValue = moment.unix(fiveDayForecast[i].dt).format('l');
          minTempK = fiveDayForecast[i].temp.min;
