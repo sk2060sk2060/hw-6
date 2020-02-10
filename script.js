@@ -202,10 +202,10 @@ function searchCity(cityName){
    humidityValue = result.main.humidity;
    windSpeed = result.wind.speed;
    currentWeatherIconCode = result.weather[0].icon;
-   currentWeatherIconUrl = "http://openweathermap.org/img/w/" + currentWeatherIconCode + ".png";
+   currentWeatherIconUrl = "https://openweathermap.org/img/w/" + currentWeatherIconCode + ".png";
    var latitude = result.coord.lat;
    var longitude = result.coord.lon;
-   var uvIndexQueryUrl = "http://api.openweathermap.org/data/2.5/uvi?&appid=" + APIKey + "&lat=" + latitude + "&lon=" + longitude;
+   var uvIndexQueryUrl = "https://api.openweathermap.org/data/2.5/uvi?&appid=" + APIKey + "&lat=" + latitude + "&lon=" + longitude;
    $.ajax({
      url: uvIndexQueryUrl,
      method: "GET"
@@ -214,7 +214,7 @@ function searchCity(cityName){
      uvIndexValue = response.value;
      displayCurrentWeather()
       
-     var fiveDayQueryUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&appid=" + APIKey + "&cnt=5";
+     var fiveDayQueryUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&appid=" + APIKey + "&cnt=5";
      $.ajax({
        url: fiveDayQueryUrl,
        method: "GET"
